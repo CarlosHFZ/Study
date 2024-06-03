@@ -1,0 +1,101 @@
+Comandos SQL
+
+selecione o nome, o telefone e o e-mail de todos os contatos cujo nome seja “Edson”.
+
+SELECT nome,telefone, email
+FROM contato, telefone, email
+WHERE contato.id = telefone.contato_fk AND contato.id = email.contato_fk and contato.nome = 'Edson';
+
+
+
+selecione o id do telefone de todos os contatos cujo peso seja maior que 70
+
+SELECT telefone.id
+FROM contato, telefone
+WHERE telefone.contato_fk = contato.id AND contato.peso > 70
+
+
+
+
+selecione o nome do grupo e o nome do contato de todos os contatos cujo nome seja “Joaquim”.
+
+SELECT contato.nome as n, grupo as g
+FROM contato, grupo, afiliacao
+WHERE contato.id = afiliacao.contato_fk AND grupo.id = afiliacao.grupo_fk AND n = 'Joaquim';
+
+Explicação: Uma facilidade na construção de consultas que têm termos repetidos sendo referenciados é a criação de um alias. Um alias é um apelido definido para um determinado termo da consulta SQL. No Exemplo 4, definimos que o atributo contato.nome possui um alias “n” e que o atributo grupo.nome possui um alias “g”. Desse modo, no restante dessa consulta, não precisamos mais nos referenciar a esses atributos pela referência completa, torna-se possível, então, simplesmente escrevermos a condição final da consulta como sendo n = ‘Joaquim’.
+
+
+
+selecione o peso de todos os contatos com peso < 100.
+
+
+SELECT c.peso
+FROM contato c
+WHERE c.peso < 100.
+
+
+selecione a data de nascimento de todos os contatos.
+
+SELECT nacimento FROM contato;
+
+Explicação: Não necessariamento precisamos usar o WHERE, pois estamos puxando todas as datas de nascimento do sistema, mas não é aconselhado, pois podem haver bilhoes de dados em um banco grande.
+
+
+
+selecione todos os atributos de contatos cujo peso = 75.
+
+SELECT *
+FROM contato
+WHERE peso = 75
+
+Explicação: Usando o "*" faz a busca sem parametros de atributos, buscando todos os dados.
+
+
+
+
+selecione todos os sobrenomes distintos de todos os contatos.
+
+SELECT DISTINCT sobrenome
+FROM contato;
+
+Explicação: Faz a busca por distinto, ou seja, sem duplicidade.
+
+
+
+
+selecione todos os telefones cujo número comece com “44”.
+
+SELECT *
+FROM telefone
+WHERE telefone LIKE '44%';
+
+Explicação: utilizamos o comparador “LIKE” para definir uma busca por padrões em strings. O caractere “%” é utilizado em condições LIKE para definir zero ou mais caracteres. Nesse exemplo, o “44%” determina que a string deve iniciar com “44” e pode possuir zero ou mais caracteres posteriores.
+
+
+
+
+selecione todos os contatos que nasceram na década de 1980.
+
+SELECT *
+FROM contato
+WHERE nacimento LIKE "198_-__-__';
+
+
+selecione todos os contatos cujo peso esteja entre 90 e 100.
+
+SELECT *
+FROM contato
+WHERE peso BETWEEN 90 AND 100;
+
+
+
+selecione o nome de todos os contatos por ordem alfabética crescente.
+
+SELECT nome
+FROM contato
+ORDER BY nome ASC;
+
+OBS: A cláusula “ORDER BY” da SQL permite que o resultado da busca seja ordenado de acordo com os parâmetros informados. Uma cláusula “ORDER BY” pode ordenar os resultados de modo ascendente ou descendente. Para tanto, basta adicionar respectivamente o modificador “ASC” ou “DESC” na cláusula. O valor “ASC” é o padrão e o valor assumido caso o modificador seja omitido.
+
+
