@@ -97,13 +97,13 @@ int main(int argc, char const *argv[])
     alunos_notas[1].nota3 = 2.5;
     alunos_notas[1].nota4 = 1.5;
 
-    printf("\nNotas do Aluno 1:\n");
+    printf("\n\nNotas do Aluno 1:\n\n");
     printf("\nNota 1: %.2f", alunos_notas[0].nota1);
     printf("\nNota 2: %.2f", alunos_notas[0].nota2);
     printf("\nNota 3: %.2f", alunos_notas[0].nota3);
     printf("\nNota 4: %.2f", alunos_notas[0].nota4);
 
-    printf("\n\nNotas do Aluno 2:\n");
+    printf("\n\nNotas do Aluno 2:\n\n");
     printf("\nNota 1: %.2f", alunos_notas[1].nota1);
     printf("\nNota 2: %.2f", alunos_notas[1].nota2);
     printf("\nNota 3: %.2f", alunos_notas[1].nota3);
@@ -113,5 +113,3 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-
-
