@@ -50,3 +50,68 @@
 //     printf("pes.nome: %s\n", pes.nome);
 
 // }
+
+
+// struct fraction {
+//     int numerator;
+//     int denominator;
+//     float value;   
+// };
+
+// struct fraction metad;
+
+// int main(int argc, char const *argv[])
+// {
+//     metad.numerator = 1;
+//     metad.denominator = 2;
+//     metad.value = (float)metad.numerator / metad.denominator;
+//     printf("\nValor do numerador: %d", metad.numerator);
+//     printf("\nValor do denominator: %d", metad.denominator);
+//     printf("\nValor da fracao: %.2f", metad.value);
+
+//     return 0;
+// }
+
+
+struct livro
+{
+    float nota1;
+    float nota2;
+    float nota3;
+    float nota4;
+};
+
+struct livro alunos_notas[40];
+
+int main(int argc, char const *argv[])
+{
+
+    alunos_notas[0].nota1 = 10;
+    alunos_notas[0].nota2 = 7.5;
+    alunos_notas[0].nota3 = 4;
+    alunos_notas[0].nota4 = 9;
+
+        
+    alunos_notas[1].nota1 = 2;
+    alunos_notas[1].nota2 = 3;
+    alunos_notas[1].nota3 = 2.5;
+    alunos_notas[1].nota4 = 1.5;
+
+    printf("\nNotas do Aluno 1:\n");
+    printf("\nNota 1: %.2f", alunos_notas[0].nota1);
+    printf("\nNota 2: %.2f", alunos_notas[0].nota2);
+    printf("\nNota 3: %.2f", alunos_notas[0].nota3);
+    printf("\nNota 4: %.2f", alunos_notas[0].nota4);
+
+    printf("\n\nNotas do Aluno 2:\n");
+    printf("\nNota 1: %.2f", alunos_notas[1].nota1);
+    printf("\nNota 2: %.2f", alunos_notas[1].nota2);
+    printf("\nNota 3: %.2f", alunos_notas[1].nota3);
+    printf("\nNota 4: %.2f", alunos_notas[1].nota4);
+
+
+
+    return 0;
+}
+
+
