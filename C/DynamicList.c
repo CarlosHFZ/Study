@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <locale.h>
 
 
 typedef struct No{
@@ -35,20 +36,12 @@ void list_insert(ptr_no list){
 
 void list_remove(ptr_no lista){
 
-    int data;
     ptr_no current;
     current = (ptr_no)malloc(sizeof(No));
-    printf("\n\nEscolha uma dos itens:\n");
-    scanf("%d", &data);
-    while((list->data != data)){
-        if(list->next == NULL){
-            break;
-        }
-        current = list;
+
+    if(list->next != NULL){
         list = list->next;
-    }
-    if(list->data == data){
-        current->next = list->next;       
+        current->next = list->next;
     }
 }
 
@@ -76,11 +69,9 @@ void menu_select(int op){
     }
 }
 
-
-
-
-
 int main(){
+    setlocale(LC_ALL, "Portuguese");
+
     srand(time(NULL));
     op = 1;
     list = (ptr_no)malloc(sizeof(No));
@@ -89,7 +80,6 @@ int main(){
 
     while(op != 0){
         system("cls");
-
         menu_show();
         scanf("%d", &op);
         menu_select(op);
