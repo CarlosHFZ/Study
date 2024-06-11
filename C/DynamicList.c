@@ -36,19 +36,19 @@ void list_insert(ptr_no list){
 void list_remove(ptr_no lista){
 
     int data;
-    ptr_no actually;
-    actually = (ptr_no)malloc(sizeof(No));
+    ptr_no current;
+    current = (ptr_no)malloc(sizeof(No));
     printf("\n\nEscolha uma dos itens:\n");
     scanf("%d", &data);
     while((list->data != data)){
         if(list->next == NULL){
             break;
         }
-        actually = list;
+        current = list;
         list = list->next;
     }
     if(list->data == data){
-        actually->next = list->next;       
+        current->next = list->next;       
     }
 }
 
