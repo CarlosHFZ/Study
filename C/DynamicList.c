@@ -7,27 +7,28 @@
 typedef struct No{
     int data;
     struct No* next;
-} No;
+}No;
 
 typedef No *ptr_no;
 ptr_no list;
 int op;
 
 void list_show(ptr_no list){
-    system("cls");
-    
+    // system("cls");
+    printf("\nlista: [");
     while(list->next != NULL){
         printf("%d, ", list->data);
         list = list->next;
         }
     printf("%d, ", list->data);
+    printf("]");
     }
 
 void list_insert(ptr_no list){
     while(list->next != NULL){
-        list = list->next;
+        list = list->next;      
     }
-
+    
     list->next = (ptr_no)malloc(sizeof(No));
     list = list->next;
     list->data = rand()%100;
@@ -78,8 +79,9 @@ int main(){
     list->data = 0;
     list->next = NULL;
 
+
     while(op != 0){
-        system("cls");
+        // system("cls");
         menu_show();
         scanf("%d", &op);
         menu_select(op);
