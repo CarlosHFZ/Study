@@ -1,6 +1,6 @@
 
 
-def geradorCPF(num):
+def geradorCPF(num=1):
     for i in range(0, num):
         import random
 
@@ -45,4 +45,4 @@ def geradorCPF(num):
             cpf_gerado += i
         print(cpf_gerado)
 
-geradorCPF(10)
+geradorCPF(2)
