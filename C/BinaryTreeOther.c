@@ -11,9 +11,6 @@ typedef struct{
     No *raiz;
 }ArvB;
 
-inserir_Esquerda(No *no, int valor){}
-inserir_Direita(No *no, int valor){}
-
 
 void inserir_Esquerda(No *no, int valor){
     if (no->esquerda == NULL){
