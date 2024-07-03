@@ -10,7 +10,18 @@
 class MyError(Exception):
     ...
 
-def Raiser():
-    raise MyError('A mensagem do meu erro')
+class OtherError(Exception):
+    ...
 
-Raiser()
+def Raiser():
+    exception_ = MyError('a','b','c',)
+    raise exception_
+
+try:
+    Raiser()
+except (MyError, ZeroDivisionError) as error:
+    print(error.__class__.__name__)
+    print(error.args)
+    print()
+    exception_ = OtherError('Vou lanlar de novo')
+    raise exception_ from error
