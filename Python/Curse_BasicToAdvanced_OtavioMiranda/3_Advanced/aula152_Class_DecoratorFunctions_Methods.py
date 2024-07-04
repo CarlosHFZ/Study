@@ -9,9 +9,13 @@ def adciona_repr(cls):
     cls.__repr__ = meu_repr
     return cls   
 
-def meu_planeta(metodeo):
+def meu_planeta(metodo):
     def interno(self, *args, **kwargs):
-        resultado = self.falar_nome()
+        resultado = metodo(self, *args, **kwargs)
+
+        if 'Terra' in resultado:
+            return 'Você está em casa'
+
         return resultado
     return interno  
 
