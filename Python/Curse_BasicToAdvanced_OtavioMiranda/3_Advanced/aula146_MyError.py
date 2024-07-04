@@ -15,6 +15,8 @@ class OtherError(Exception):
 
 def Raiser():
     exception_ = MyError('a','b','c',)
+    exception_.add_note('Olha a nota 1')
+    exception_.add_note('Voce errou isso')
     raise exception_
 
 try:
@@ -24,4 +26,7 @@ except (MyError, ZeroDivisionError) as error:
     print(error.args)
     print()
     exception_ = OtherError('Vou lanlar de novo')
+    
+    exception_.__notes__ = error.__notes__.copy()
+    exception_.add_note('Mais uma nota')
     raise exception_ from error
