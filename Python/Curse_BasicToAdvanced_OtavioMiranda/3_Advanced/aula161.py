@@ -4,7 +4,7 @@
 # estrutura usada nessa aula.
 # https://docs.python.org/3/library/collections.abc.html
 from collections.abc import Sequence
-from typing import Iterator
+# from typing import Iterator
 
 
 class MyList(Sequence):
