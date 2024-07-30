@@ -12,6 +12,16 @@
 # load_dotenv()
 # https://pypi.org/project/python-dotenv/
 # OBS.: sempre lembre-se de criar um .env-example
+# import os
+
+# senha = os.getenv('SENHA')
+
+# print(senha)
+
+from dotenv import load_dotenv  # type: ignore
 import os
 
-print(os.getenv('SENHA'))
+load_dotenv()
+
+# print(os.environ)
+print(os.getenv('BD_PASSWORD'))
