@@ -19,7 +19,7 @@ shutil.rmtree(PATH_UNPACKED, ignore_errors=True)
 
 # raise Exception()
 
-# Cria o diretório para a aula]
+# Cria o diretório para a aula
 PATH_ZIP_DIR.mkdir(exist_ok=True)
 
 
