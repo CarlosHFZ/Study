@@ -1,10 +1,12 @@
-import Header from './Header'
-import InputWithText from './InputWithText'
+import Header from './components/Header/Header'
+import InputWithText from './components/InputWithText/InputWithText'
+import LoginForm from './components/LoginForm/LoginForm'
 function App() {
   return (
     <>
-    <Header/>
-    <InputWithText/>
+    <Header hideMenu={true} name="Joao"/>
+    {/* <InputWithText/> */}
+    <LoginForm />
     </>
   )
 }
