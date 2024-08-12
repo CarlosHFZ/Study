@@ -1,0 +1,12 @@
+.header {
+    background-color: bisque;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
