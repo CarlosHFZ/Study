@@ -1,13 +1,17 @@
-import Header from './components/Header/Header'
-import InputWithText from './components/InputWithText/InputWithText'
-import LoginForm from './components/LoginForm/LoginForm'
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
+import HomePage from './pages/Home/Home'
+import AboutPage from './pages/About/About'
+
+const browserRouter = createBrowserRouter(createRoutesFromElements(
+  <Route path='/dashboard'>~
+    <Route index={true} element={<HomePage />} />
+    <Route path='about' element={<AboutPage />} />
+  </Route>
+))
+
 function App() {
   return (
-    <>
-    <Header hideMenu={true} name="Joao"/>
-    {/* <InputWithText/> */}
-    <LoginForm />
-    </>
+    <RouterProvider router={browserRouter} />
   )
 }
 
