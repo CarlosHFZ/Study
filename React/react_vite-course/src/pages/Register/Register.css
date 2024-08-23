@@ -1,0 +1,11 @@
+.register-container {
+    padding-top: 30px;
+    max-width: 400px;
+    margin-inline: auto;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}

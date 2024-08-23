@@ -1,4 +1,5 @@
 import './Header.css'
+import PropTypes from 'prop-types'
 
 function Header(props) {
     const hideMenu = props.hideMenu
@@ -16,5 +17,9 @@ function Header(props) {
     )
 }
 
+Header.propTypes = {
+    hideMenu: PropTypes.bool,
+    name: PropTypes.string
+}
 
 export default Header
