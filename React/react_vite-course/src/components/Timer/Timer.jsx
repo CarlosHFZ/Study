@@ -16,8 +16,8 @@ export default function Timer() {
     })
 
     return (
-        <div>{time}
-
+        <div>
+            Timer: {time}
         </div>
     )
 }
