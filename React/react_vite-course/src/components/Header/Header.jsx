@@ -1,4 +1,5 @@
 // import headerElement from '../HeaderWithoutJSX'
+import { Link } from 'react-router-dom'
 import './Header.css'
 import PropTypes from 'prop-types'
 
@@ -10,8 +11,8 @@ function Header(props) {
     <header className="header">
         {hideMenu ? null : (
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="about/">Sobre</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="about/">Sobre</Link></li>
             </ul>
         )}
         {props.name}

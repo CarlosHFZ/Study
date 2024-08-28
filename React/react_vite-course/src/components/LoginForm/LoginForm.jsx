@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './LoginForm.css'
+import authContext from '../../contexts/authContext'
 
 function LoginForm() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const context = useContext(authContext)
+    const navigate = useNavigate()
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     function onEmailChangeHandler(event){
@@ -25,6 +29,8 @@ function LoginForm() {
         if (isInputValid()){
             console.log('Seu email é:', email)
             console.log('Sua senha é:', password)
+            context.setIsAuthenticated(true)
+            navigate('/')
         } else {
             console.log('Campos inválidos')
         }
@@ -42,6 +48,7 @@ function LoginForm() {
                 <input type='password' id='password' placeholder='Senha' onChange={onPasswordChangeHandler}/>
             </div>
             <button typeof='submit'>Login</button>
+            {context.isAuthenticated ? 'autenticado' : 'não autenticado'}
         </form>
 
     )
