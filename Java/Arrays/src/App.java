@@ -6,6 +6,8 @@ import Aarrays.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.Collections;
+
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -22,10 +24,10 @@ public class App {
         // for(String s:lista)
         // System.out.println(s);
 
-        List<Pessoa> lista = new ArrayList<>();
+        // List<Pessoa> lista = new ArrayList<>();
 
         Pessoa p1 = new Pessoa("125848955", "Juliana");
-        Pessoa p2 = new Pessoa("125848955", "Juliana");
+        Pessoa p2 = new Pessoa("12584895", "Juliana");
         Pessoa p3 = new Pessoa("212258484", "Karol");
         Pessoa p4 = new Pessoa("1515161651", "Cesar");
 
@@ -95,10 +97,31 @@ public class App {
         // else
         //     System.out.println("São diferentes");
 
-        if(p1.equals(p2))
-            System.out.println("São iguais");
-        else
-            System.out.println("São diferentes");
+        // if(p1.equals(p2))
+        //     System.out.println("São iguais");
+        // else
+        //     System.out.println("São diferentes");
+
+        /////// HASHCODE /////////////
+
+        // if(p1.hashCode() == p2.hashCode())
+        //     System.out.println(p1.hashCode()+" | È igual a | "+p2.hashCode());
+        // else
+        //     System.out.println(p1.hashCode()+" | È diferente a | "+p2.hashCode());
+
+
+        /////////// ordenação compareTO \\\\\\\\\\\\\
+
         
+
+        List<Pessoa> lista = new ArrayList<>();
+        lista.add(p1);
+        lista.add(p2);
+        lista.add(p3);
+        lista.add(p4);
+
+        Collections.sort(lista);
+        for (Pessoa pessoa : lista)
+            System.out.println(pessoa.getNome());
     }
 }
