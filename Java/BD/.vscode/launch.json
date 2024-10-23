@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run",
+            "request": "launch",
+            "mainClass": "Biblioteca.Main" // Certifique-se de que esse é o caminho correto para sua classe Main
+        }
+    ]
+}
+
+
