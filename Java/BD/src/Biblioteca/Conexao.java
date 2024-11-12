@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Conexao {
+    
     private Connection conexao;
     private final String URL = "jdbc:mysql://localhost:3306/?allowPublicKeyRetrieval=true&useSSL=false"; // Acesse a raiz do MySQL
     private final String USER = "root"; // Substitua pelo seu usuário
@@ -51,3 +52,5 @@ public class Conexao {
         }
     }
 }
+
+

@@ -1,5 +1,6 @@
 package Biblioteca;
 
+
 public class Livro {
     private long id;
     private String titulo;
@@ -21,4 +22,35 @@ public class Livro {
         this.isbn = isbn;
         this.avaliacao = avaliacao;
     }
+
+    public String getTitulo(){
+        return this.titulo;
+    }
+
+    public String getAutor(){
+        return this.autor;
+    }
+
+
+    public int getPaginas(){
+        return this.paginas;
+    }
+
+    public String getEditora(){
+        return this.editora;
+    }
+
+    public String getIsbn(){
+        return this.isbn;
+    }
+
+    public int getAvaliacao(){
+        return this.avaliacao;
+    }
+    
+    public long getId() {
+        return id;
+    }
+
+
 }
