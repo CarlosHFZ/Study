@@ -8,7 +8,7 @@
 # Ative seu ambiente virtual
 # pip install pypdf2
 from pathlib import Path
-from PyPDF2 import PdfReader
+from pypdf import PdfReader, PdfWriter
 
 ROOT_FOLDER = Path(__file__).parent
 ORIGINALS_FOLDER = ROOT_FOLDER / 'pdf_originals'
@@ -27,7 +27,42 @@ reader = PdfReader(BACEN_RELATORY)
 #     print()
 
 
-page0 = reader.pages[0]
+# page0 = reader.pages[0]
 
-# print(page0.extract_text())
-print(page0.images)
+page0 = reader.pages[0]
+image0 = page0.images[0]
+
+
+# print(page0.images)
+# print(page0.images[0])
+# print(len(page0.images))
+
+# with open(NEW_FOLDER / image0.name, 'wb') as fp:
+#     fp.write(image0.data)
+
+
+# writer = PdfWriter()
+
+# with open(NEW_FOLDER / 'page0.pdf', 'wb') as archive:
+
+#     for page in reader.pages:
+#         writer.add_page(page)
+#     writer.write(archive)
+
+for i, page in enumerate(reader.pages):
+    writer = PdfWriter()
+    with open(NEW_FOLDER / f'page{i}.pdf', 'wb') as archive:
+        writer.add_page(page)
+        writer.write(archive)
+
+
+files = [
+    NEW_FOLDER / 'page0.pdf',
+    NEW_FOLDER / 'page1.pdf',
+]
+merger = PdfWriter()
+for file in files:
+    merger.append(file)  # type: ignore
+
+merger.write(NEW_FOLDER / 'merged0.pdf')  # type: ignore
+merger.close()   # type: ignore
