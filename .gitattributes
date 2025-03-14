@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+PySide6 filter=lfs diff=lfs merge=lfs -text
+Qt6WebEngineCore.dll filter=lfs diff=lfs merge=lfs -text
+D:/Carlos/Estudos_Pessoais/Study/Python/Course_BasicToAdvanced/venv/Lib/site-packages/PySide6/Qt6WebEngineCore.dll filter=lfs diff=lfs merge=lfs -text
