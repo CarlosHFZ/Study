@@ -1,12 +1,14 @@
 # from django.http import HttpResponse
 from django.shortcuts import render
+from blog.data import posts
 
 def blog(request):
     print('blog')
 
     context = {
-        'text': 'Olá blog',
-        'title': 'Essa é uma pagina de exemplo - '
+        # 'text': 'Olá blog',
+        'title': 'Página - ',
+        'posts': posts
     }
 
 
@@ -20,7 +22,7 @@ def exemplo(request):
 
     context = {
         'text': 'Olá exemplo ',
-        'title': 'Essa é uma pagina de exemplo - '
+        'title': 'Página - '
     }
     
     print('exemplo')
