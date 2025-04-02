@@ -7,6 +7,16 @@
   box-sizing: border-box;
 }
 
+a {
+  color: rgba(54, 141, 223, 0.781);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(54, 141, 223, 0.781);
+  text-decoration: underline;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -31,8 +41,24 @@ body {
   border-radius: 3%;
 }
 
+.menu {
+  background: black;
+  padding: 0 1.5rem;
+}
+
+.menu__links {
+  list-style: none;
+  display: flex;
+}
+.menu__links a {
+  display: block;
+  color: #fff;
+  padding: 1.5rem;
+
+}
+
 @media (min-width: 600px){
-  .content {
+  .content:not(:has(.single-post)) {
     grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
   }
 }
