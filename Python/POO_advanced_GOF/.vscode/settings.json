@@ -1,0 +1,7 @@
+{
+
+    "python.listing.mypyEnabled": true,
+    "python.listing.flake8Enabled": true,
+    "python.testing.unittestEnabled": false
+
+}
